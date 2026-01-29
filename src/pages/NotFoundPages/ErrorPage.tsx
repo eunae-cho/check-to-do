@@ -1,10 +1,6 @@
 function ErrorPage() {
     return (
-        <>
-            <text>
-                404 ERROR
-            </text>
-        </>
+            <text>❗️404 ERROR❗️</text>
     )
 }
 

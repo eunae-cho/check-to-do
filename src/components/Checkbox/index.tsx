@@ -1,13 +1,14 @@
+import { MouseEvent } from "react";
 import styled from "styled-components";
 
-const Circle = styled.div<{ checked?: boolean;
-    onClick?: ()=>void;
- }>`
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+const Circle = styled.div<{ checked?: boolean; }>`  
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 20%;
     border: 2px solid ${props => props.checked ? 'red' : "#eee"};
-    padding: 3px;
+    // padding: 3px;
+    margin-right: 10px;
 
     & > .checkbox-icon {
     width: 100%;
@@ -17,12 +18,15 @@ const Circle = styled.div<{ checked?: boolean;
     }
 `
 
-export default function Checkbox({ checked, onClick }
-    :{ checked?: boolean;
-        onClick?: ()=> void; }) {
+// check 이벤트 핸들러 :: EA
+function onCheck(e: MouseEvent<HTMLDivElement>) {
+    console.log('체크박스 클릭!!', e);
+}
+
+export default function Checkbox({ checked, onCheck }:{ checked?: boolean; onCheck?: ()=>void }) {
     return (
         <>
-            <Circle checked={checked} onClick={onClick}>
+            <Circle checked={checked} onClick={onCheck}>
                 {checked? <div className="checkbox-icon"/> : null}
             </Circle>
         </>

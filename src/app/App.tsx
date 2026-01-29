@@ -1,7 +1,6 @@
 import { theme } from '@styles/theme';
 import '../App.css';
 import { ThemeProvider } from 'styled-components';
-import styled from 'styled-components';
 import GlobalStyle from '@styles/GlobalStyle';
 import Router from './Router';
 

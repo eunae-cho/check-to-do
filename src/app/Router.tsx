@@ -7,7 +7,7 @@ function Router() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="*" Component={ErrorPage}  />
+                <Route path="*" element={<ErrorPage />}  />
             </Routes>
         </BrowserRouter>
     )
