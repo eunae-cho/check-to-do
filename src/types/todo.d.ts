@@ -3,7 +3,7 @@ interface ITodoContent {
 }
 
 interface ITodoItem extends ITodoContent {
-    id: number;
+    id: string;
     completed: boolean;
     editing: boolean;
 }

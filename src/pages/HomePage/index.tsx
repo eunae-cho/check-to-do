@@ -1,9 +1,10 @@
-import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import styled from "styled-components";
 
 import TodoItem from "@components/TodoItem"
 import TodoInput from "@components/TodoInput";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "store/store";
 
 const PageWrapper = styled.div`
     width: 100vw;
@@ -24,7 +25,8 @@ const HomeContainer = styled.div`
     min-width: 430px;
     width: 60vw;
     height: 90vh;
-    background-color:rgb(241, 249, 238);
+    border-radius: 20px;
+    background-color:rgb(171, 232, 253);
 `
 const Title = styled.h1`
     margin: 15px;
@@ -41,24 +43,22 @@ const TodoList = styled.div`
 `
 
 function HomePage() {
-    const [todoList, setTodoList] = useState<ITodoItem[]>([]);
+    const todoList = useSelector((state:RootState)=>{ 
+        return state.todo;
+        });
 
     return (
         <PageWrapper>
-
             <HomeContainer>
                 <Helmet>
                     <title>CHECK-TO-DO</title>
                 </Helmet>
                 <Title>Todo List</Title>
-                <TodoInput setTodoList={(todo: ITodoItem) => setTodoList([todo, ...todoList])}/>
+                <TodoInput/>
                 <TodoList id="todo-list-section">
                     {todoList.map((item, index)=> {
                         return (
-                            <TodoItem key={index} todoItem={{ id: index, 
-                                                            completed:false, 
-                                                            content:item.content, 
-                                                            editing: false}}/>
+                            <TodoItem key={index} todoItem={{ id:item.id, content: item.content, completed: item.completed, editing: item.editing }}/>
                         )
                     })}
                 </TodoList>

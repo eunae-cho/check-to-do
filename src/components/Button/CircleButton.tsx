@@ -7,7 +7,7 @@ const Circle = styled.div`
     border-radius: 50%;
     
     &:hover {
-        background-color: gray
+        //휴지통 hover시 어떤 변화를 통해 표시할 것인지?
     }
 `
 

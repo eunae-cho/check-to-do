@@ -6,15 +6,15 @@ const Circle = styled.div<{ checked?: boolean; }>`
     width: 25px;
     height: 25px;
     border-radius: 20%;
-    border: 2px solid ${props => props.checked ? 'red' : "#eee"};
+    border: 2px solid ${props => props.checked ? 'background' : "#eee"};
     // padding: 3px;
     margin-right: 10px;
 
     & > .checkbox-icon {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    background: red;
+    border-radius: 20%;
+    background: background;
     }
 `
 

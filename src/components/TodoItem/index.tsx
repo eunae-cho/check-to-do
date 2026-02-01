@@ -1,5 +1,7 @@
 import CircleButton from "@components/Button/CircleButton"
 import Checkbox from "@components/Checkbox"
+import { useDispatch } from "react-redux"
+import { checkTodo, deleteTodo } from "store/todo/todoSlice"
 import styled from "styled-components"
 
 const ItemContainer = styled.div`
@@ -28,15 +30,25 @@ const TodoContent = styled.span<{ checked?: boolean }>`
     text-decoration: ${props => (props.checked ? 'line-through' : 'initial') }; 
 `
 
-export default function TodoItem({todoItem}: {todoItem: ITodoItem}) {
+export default function TodoItem({todoItem}:{todoItem: ITodoItem}) {
+    const dispatch = useDispatch();
+
+    const onCheckClick = (id:string) => {
+        dispatch(checkTodo(id));
+    }
+
+    const onDeleteClick = (id:string) => {
+        dispatch(deleteTodo(id));
+    }
+   
     return(
         <ItemContainer>
             <div>
-                <Checkbox checked={todoItem.completed}/>
+                <Checkbox checked={todoItem.completed} onCheck={ ()=>onCheckClick(todoItem.id) }/>
                 <TodoContent checked={todoItem.completed}>{todoItem.content}</TodoContent>
             </div>
 
-            <CircleButton className="delete-button" buttonClick={()=> {}} iconSrc={process.env.PUBLIC_URL+ 'asset/icon-delete.svg'}/>                        
+            <CircleButton className="delete-button" buttonClick={ ()=> onDeleteClick(todoItem.id) } iconSrc={process.env.PUBLIC_URL+ '/asset/icon-delete.svg'}/>                        
         </ItemContainer>
     )
 }

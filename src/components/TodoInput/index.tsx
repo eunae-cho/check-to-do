@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from "store/todo/todoSlice";
 import styled from "styled-components"
 
 const InputContainer = styled.div`
@@ -25,26 +27,26 @@ const Button = styled.button`
     height: 3rem;
     border: none;
     border-radius: 10px;
+    background-color: white;
+    
+    &:hover {
+        border: 1px solid black;
+    }
 `
 
-export default function TodoInput({ setTodoList }: {setTodoList : (todo: ITodoItem)=> void}) {
+export default function TodoInput() {
     const [content, setContent] = useState('');
+    const dispatch = useDispatch();
 
     // 버튼 클릭했을 경우, submit해주는 함수 (enter키도 같이 적용할 수 있도록) ::EA
     function clickSubmit() {
-        console.log('clickSubmit 호출');
         if(content!=='') {
-            setTodoList({
-                id: 0,
-                content: content,
-                completed: false,
-                editing: false
-            });
+            dispatch(addTodo(content))
 
             setContent('');
         } else {
             //모달로 바꿔보기 ::EA
-            alert('할일을 입력하세요');
+            alert('할 일을 입력하세요');
         }
     }
 
@@ -53,9 +55,7 @@ export default function TodoInput({ setTodoList }: {setTodoList : (todo: ITodoIt
             <Input id="input-text" type="text"  placeholder="할 일을 입력해주세요"  value={content} 
                     onChange={(e) => setContent(e.target.value)}
                     onKeyUp={(e)=> { 
-                        if(e.key==='Enter') {
-                            clickSubmit()
-                        }
+                        if(e.key==='Enter') clickSubmit();
                     }}
                     ></Input>
             <Button onClick={()=> clickSubmit()}>등록</Button>
