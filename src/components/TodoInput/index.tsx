@@ -1,3 +1,4 @@
+import { theme } from "@styles/theme";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "store/todo/todoSlice";
@@ -8,29 +9,33 @@ const InputContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 0px 15px;
     width: 100%;
-    height: 3.5rem;
-    background-color: '#453241';
+    height: 44.5px;
 `
 const Input = styled.input`
     display: inline-block;
     text-align: center;
-    width: 80%;
-    height: 3rem;
-    border: none;
-    border-radius: 10px;
+    width: 100%;
+    height: 35.5px;
+    border: 0.8px solid ${theme.colors.primary};
+    border-radius: 2px;
 `
 const Button = styled.button`
     display: inline-block;
     margin-left: 10px;
-    width: 5rem;
-    height: 3rem;
-    border: none;
-    border-radius: 10px;
-    background-color: white;
-    
+    width: 50.5px;
+    height: 35.5px;
+    color: ${theme.colors.white};
+    border-radius: 2px;
+    border: 0.8px solid ${theme.colors.primary};
+    background-color: ${theme.colors.primary_20};
+    font-size: ${theme.fontSizes.tn};
+    font-family: 'Pretendard-ExtraLight';
+
     &:hover {
-        border: 1px solid black;
+        border: 0.8px solid ${theme.colors.primary};
+        background-color: ${theme.colors.primary_50};
     }
 `
 

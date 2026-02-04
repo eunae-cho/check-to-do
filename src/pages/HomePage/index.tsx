@@ -1,45 +1,50 @@
 import { Helmet } from "react-helmet-async";
 import styled from "styled-components";
+import {theme} from "@styles/theme"
 
 import TodoItem from "@components/TodoItem"
 import TodoInput from "@components/TodoInput";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "store/store";
 
 const PageWrapper = styled.div`
-    width: 100vw;
-    height: 100vh;
+    width: 400px;
+    height: 480px;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    `
+`
 
 const HomeContainer = styled.div`
     margin: 0;
-    padding: 10px 10px;
+    padding: 25px 25px;
+    width: 400px;
+    height: 480px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 430px;
-    width: 60vw;
-    height: 90vh;
-    border-radius: 20px;
-    background-color:rgb(171, 232, 253);
+    min-width: 400px;
+    background: ${theme.colors.background_gradient};
 `
-const Title = styled.h1`
-    margin: 15px;
+const LogoImage = styled.div`
+    width: 100%;
+    height: 125px;
+    align-content: center;
+    text-align: center;
+
+    & >img {
+        height: 53.88px;
+    }
 `
 const TodoList = styled.div`
-    display: flex;
+    margin: 15px;
+    display: flex;  
     flex-direction: column;
-    align-items: center;
-    width: 90%;
-    padding: 10px 15px;
-    margin-top: 10px;
-    // background-color: gray;
-    border-radius: 10px;
+    width: 335px;
+    max-height: 245px;
+    overflow-y: auto;
 `
 
 function HomePage() {
@@ -48,12 +53,14 @@ function HomePage() {
         });
 
     return (
-        <PageWrapper>
+        //<PageWrapper>
             <HomeContainer>
                 <Helmet>
-                    <title>CHECK-TO-DO</title>
+                    <title>STICKY DO</title>
                 </Helmet>
-                <Title>Todo List</Title>
+                <LogoImage>
+                    <img src={process.env.PUBLIC_URL+ '/asset/STICKYDO.svg'}/>
+                </LogoImage>
                 <TodoInput/>
                 <TodoList id="todo-list-section">
                     {todoList.map((item, index)=> {
@@ -63,7 +70,7 @@ function HomePage() {
                     })}
                 </TodoList>
             </HomeContainer>
-        </PageWrapper>
+        //</PageWrapper>
         )
 }
 

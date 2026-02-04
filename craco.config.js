@@ -10,7 +10,7 @@ module.exports = {
             '@hooks' : path.resolve(__dirname, 'src/hooks'),
             '@utils' : path.resolve(__dirname, 'src/utils'),
             '@types' : path.resolve(__dirname, 'src/types'),
-            // '@asset' : path.relative(__dirname, 'src/asset')
+            '@fonts' : path.relative(__dirname, 'src/fonts')
         }
     }
 }

@@ -1,13 +1,21 @@
+import { theme } from "@styles/theme"
 import styled from "styled-components"
 
 const Circle = styled.div`
     display:none;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
+    align-items: center;
+    justify-content: center;
     
     &:hover {
-        //휴지통 hover시 어떤 변화를 통해 표시할 것인지?
+       filter: drop-shadow(0.5px 0.5px 4px ${theme.colors.primary_50});
+    }
+
+    & >img {
+        width: 80%;
+        height: 80%;
     }
 `
 

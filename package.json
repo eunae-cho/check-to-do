@@ -1,6 +1,7 @@
 {
   "name": "check-to-do",
   "version": "0.1.0",
+  "homepage": "https://github.com/eunae-cho/check-to-do.git",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
@@ -26,7 +27,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "predeply": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +51,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
-    "@types/styled-components": "^5.1.36"
+    "@types/styled-components": "^5.1.36",
+    "gh-pages": "^6.3.0"
   }
 }

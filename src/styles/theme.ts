@@ -1,13 +1,19 @@
 // src/styles/theme.ts
 export const theme = {
     colors: {
-      primary: '#4F46E5',
+      primary: '#432F68',
       secondary: '#6366F1',
-      background: '#F9FAFB',
-      black: '#121212',
+      primary_20: 'rgba(67, 47, 104, 0.2)',
+      primary_50: 'rgba(67, 47, 104, 0.5)',
+      background_purple: '#F2EFFF',
+      background_blue: '#DFFCFF',
+      black: '#000000',
       gray: '#7A7A7A',
+      white: '#FFFFFB',
+      background_gradient: 'radial-gradient(circle at 50% 70%, #DFFCFF, #F2EFFF)'
     },
     fontSizes: {
+      tn: '12px',
       sm: '14px',
       md: '16px',
       lg: '20px',
@@ -15,7 +21,7 @@ export const theme = {
     spacing: {
       xs: '4px',
       sm: '8px',
-      md: '16px',
+      md: '15px',
       lg: '24px',
     },
   };
