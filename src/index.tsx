@@ -23,7 +23,7 @@ root.render(
   </React.StrictMode>
 );
 
-
+//PWA를 위한
 serviceWorkerRegistration.register();
 
 // If you want to start measuring performance in your app, pass a function
