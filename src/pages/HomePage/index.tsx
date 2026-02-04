@@ -7,6 +7,7 @@ import TodoInput from "@components/TodoInput";
 import { useSelector } from "react-redux";
 import { RootState } from "store/store";
 
+
 const PageWrapper = styled.div`
     width: 400px;
     height: 480px;
