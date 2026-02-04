@@ -18,7 +18,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/check-to-do/",
+  "scope": "/check-to-do/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#F2EFFF"
