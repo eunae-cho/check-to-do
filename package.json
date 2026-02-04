@@ -1,7 +1,7 @@
 {
   "name": "check-to-do",
   "version": "0.1.0",
-  "homepage": "https://github.com/eunae-cho/check-to-do.git",
+  "homepage": "https://eunae-cho.github.io/check-to-do/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
