@@ -4,7 +4,7 @@ import ErrorPage from "@pages/NotFoundPages/ErrorPage";
 
 function Router() {
     return(
-        <BrowserRouter>
+        <BrowserRouter basename="/check-to-do">
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="*" element={<ErrorPage />}  />
