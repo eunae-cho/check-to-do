@@ -1,4 +1,4 @@
-import { createSlice, current, nanoid, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit";
 import { TodoState } from "./type";
 
 //초기값

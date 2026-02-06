@@ -26,7 +26,7 @@ export default function CircleButton({ className, buttonClick, iconSrc }:{
 }) {
         return(
             <Circle className={className} onClick={buttonClick} >
-                <img src={iconSrc}/>
+                <img src={iconSrc} alt={"deleteIcon"}/>
             </Circle>
         )
     }

@@ -1,4 +1,3 @@
-import { MouseEvent } from "react";
 import styled from "styled-components";
 import { theme } from "@styles/theme";
 
@@ -17,11 +16,6 @@ const Circle = styled.div<{ checked?: boolean; }>`
     background: background;
     }
 `
-
-// check 이벤트 핸들러 :: EA
-function onCheck(e: MouseEvent<HTMLDivElement>) {
-    console.log('체크박스 클릭!!', e);
-}
 
 export default function Checkbox({ checked, onCheck }:{ checked?: boolean; onCheck?: ()=>void }) {
     return (
