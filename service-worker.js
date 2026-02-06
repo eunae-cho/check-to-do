@@ -13,7 +13,7 @@ self.addEventListener('install', (event) => {
   });
   
   // Fetch (네트워크 그대로 사용)
-  self.addEventListener('fetch', (event) => {
-    event.respondWith(fetch(event.request));
-  });
+//   self.addEventListener('fetch', (event) => {
+//     event.respondWith(fetch(event.request));
+//   });
   
