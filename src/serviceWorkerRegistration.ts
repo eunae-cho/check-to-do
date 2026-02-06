@@ -16,7 +16,9 @@ const isLocalhost = Boolean(
   
   export function register(config?: Config) {
     if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
-      const publicUrl = new URL(
+        console.log("여기 에러다::", process.env.PUBLIC_URL);
+
+        const publicUrl = new URL(
         process.env.PUBLIC_URL,
         window.location.href
       );

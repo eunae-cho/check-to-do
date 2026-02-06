@@ -51,7 +51,7 @@ export default function TodoInput() {
             setContent('');
         } else {
             //모달로 바꿔보기 ::EA
-            alert('할 일을 입력하세요');
+            alert('할 일을 입력해 주세요');
         }
     }
 

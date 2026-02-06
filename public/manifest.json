@@ -3,17 +3,12 @@
   "name": "StickyDo - check todo list app",
   "icons": [
     {
-      "src": "public/asset/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "asset/favicon.ico",
+      "sizes": "32x32 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "public/asset/logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "public/asset/logo512.png",
+      "src": "asset/logo512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
