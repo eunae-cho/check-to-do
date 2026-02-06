@@ -5,19 +5,19 @@ import { theme } from './theme';
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Pretendard-Medium';
-    src: url(${process.env.PUBLIC_URL}/fonts/Pretendard.woff2) format('woff2');
+    src: url('check-to-do/fonts/Pretendard.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
   }
   @font-face {
     font-family: 'Pretendard-Regular';
-    src: url(${process.env.PUBLIC_URL}/fonts/Pretendard.woff2) format('woff2');
+    src: url('check-to-do/fonts/Pretendard.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: 'Pretendard-ExtraLight';
-    src: url(${process.env.PUBLIC_URL}/fonts/Pretendard.woff2) format('woff2');
+    src: url('check-to-do/fonts/Pretendard.woff2') format('woff2');
     font-weight: 200;
     font-style: normal;
   }
