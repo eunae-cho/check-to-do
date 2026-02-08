@@ -45,25 +45,23 @@ export default function TodoInput() {
 
     // 버튼 클릭했을 경우, submit해주는 함수 (enter키도 같이 적용할 수 있도록) ::EA
     function clickSubmit() {
+        
         if(content!=='') {
             dispatch(addTodo(content))
 
             setContent('');
         } else {
-            //모달로 바꿔보기 ::EA
             alert('할 일을 입력해 주세요');
         }
     }
 
     return (
         <InputContainer>
+        <form onSubmit={(e)=> clickSubmit}>
             <Input id="input-text" type="text"  placeholder="할 일을 입력해주세요"  value={content} 
-                    onChange={(e) => setContent(e.target.value)}
-                    onKeyUp={(e)=> { 
-                        if(e.key==='Enter') clickSubmit();
-                    }}
-                    ></Input>
-            <Button onClick={()=> clickSubmit()}>등록</Button>
+                    onChange={(e) => setContent(e.target.value)}/>
+            <Button type="submit">등록</Button>
+        </form>
         </InputContainer>
     )
 }
