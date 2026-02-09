@@ -48,4 +48,4 @@ StickyDo는 React와 TypeScript를 기반으로 제작한
 
 ## 🔗 Demo
 
-👉 (배포 후 링크 추가 예정)
+👉 https://eunae-cho.github.io/check-to-do/
