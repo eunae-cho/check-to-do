@@ -44,7 +44,8 @@ const TodoList = styled.div`
     display: flex;  
     flex-direction: column;
     width: 335px;
-    max-height: 245px;
+    height: 245px;
+    // max-height: 245px;
     overflow-y: auto;
 `
 
@@ -64,6 +65,7 @@ function HomePage() {
                 <TodoInput/>
                 <TodoList id="todo-list-section">
                     {todoList.map((item, index)=> {
+                        console.log(TodoList);
                         return (
                             <TodoItem key={index} todoItem={{ id:item.id, content: item.content, completed: item.completed, editing: item.editing }}/>
                         )
