@@ -2,7 +2,7 @@ import CircleButton from "@components/Button/CircleButton"
 import Checkbox from "@components/Checkbox"
 import { theme } from "@styles/theme"
 import { useDispatch } from "react-redux"
-import { checkTodo, deleteTodo } from "store/todo/todoSlice"
+import { checkTodo, deleteTodo, editTodo } from "store/todo/todoSlice"
 import styled from "styled-components"
 
 const ItemContainer = styled.div`
@@ -49,12 +49,16 @@ export default function TodoItem({todoItem}:{todoItem: ITodoItem}) {
     const onDeleteClick = (id:string) => {
         dispatch(deleteTodo(id));
     }
+
+    const onDoubleClick = (id:string) => {
+        dispatch(editTodo(id));
+    }
    
     return(
         <ItemContainer>
             <div className="left-container">
                 <Checkbox checked={todoItem.completed} onCheck={ ()=>onCheckClick(todoItem.id) }/>
-                <TodoContent checked={todoItem.completed}>{todoItem.content}</TodoContent>
+                <TodoContent checked={todoItem.completed} onDoubleClick={()=> onDoubleClick(todoItem.id)}>{todoItem.content}</TodoContent>
             </div>
 
             <CircleButton className="delete-button" buttonClick={ ()=> onDeleteClick(todoItem.id) } iconSrc={process.env.PUBLIC_URL+ '/asset/icon-delete.svg'}/>                        

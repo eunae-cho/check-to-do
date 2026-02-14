@@ -14,7 +14,7 @@ const todoSlice = createSlice({
                     id: nanoid(),
                     content: action.payload,
                     completed: false,
-                    editing: true
+                    editing: false
                 })
             
             console.log(state);
@@ -40,5 +40,5 @@ const todoSlice = createSlice({
     }    
 });
 
-export const { addTodo, checkTodo, deleteTodo } = todoSlice.actions;
+export const { addTodo, checkTodo, deleteTodo, editTodo } = todoSlice.actions;
 export default todoSlice.reducer;

@@ -65,9 +65,10 @@ function HomePage() {
                 <TodoInput/>
                 <TodoList id="todo-list-section">
                     {todoList.map((item, index)=> {
-                        console.log(TodoList);
                         return (
-                            <TodoItem key={index} todoItem={{ id:item.id, content: item.content, completed: item.completed, editing: item.editing }}/>
+                            (item.editing)?
+                            null
+                            : <TodoItem key={index} todoItem={{ id:item.id, content: item.content, completed: item.completed, editing: item.editing }}/>
                         )
                     })}
                 </TodoList>

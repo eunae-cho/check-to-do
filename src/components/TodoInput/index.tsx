@@ -18,9 +18,16 @@ const Input = styled.input`
     text-align: center;
     width: 100%;
     height: 35.5px;
-    border: 0.8px solid ${theme.colors.primary};
+    border: 0.8px solid ${theme.colors.primary_20};
     font-size: ${theme.fontSizes.sm};
     border-radius: 2px;
+    box-shadow: inset 0px 0px 2px 0.5px ${theme.colors.primary_10};
+    outline: none;
+
+    &:focus {
+        border: 1px solid ${theme.colors.primary_50};
+        box-shadow: none;
+    }
 `
 const Button = styled.button`
     display: inline-block;
@@ -29,14 +36,14 @@ const Button = styled.button`
     height: 35.5px;
     color: ${theme.colors.white};
     border-radius: 2px;
-    border: 0.8px solid ${theme.colors.primary};
-    background-color: ${theme.colors.primary_20};
+    border: 0.8px solid ${theme.colors.primary_20};
+    background-color: ${theme.colors.primary_40};
     font-size: ${theme.fontSizes.sm};
-    font-family: 'Pretendard-ExtraLight';
+    font-family: 'Pretendard-Light';
 
     &:hover {
         border: 0.8px solid ${theme.colors.primary};
-        background-color: ${theme.colors.primary_50};
+        background-color: ${theme.colors.primary_80};
     }
 `
 
@@ -50,7 +57,6 @@ export default function TodoInput() {
             alert('할 일을 입력해 주세요');
             return ;
         }
-        
         dispatch(addTodo(content))
         setContent('');
     }
