@@ -36,9 +36,20 @@ const todoSlice = createSlice({
             state.find((item)=> {
                 if(item.id===id) 
                     item.editing = true });
+        },
+        modiTodo(state, action: PayloadAction<{id:string, content:string}>) {
+            const id = action.payload.id;
+            
+            state.find((item)=> {
+                if(item.id===id) {
+                    item.content = action.payload.content;
+                    item.editing = false;
+                }
+            })
+            console.log("modi");
         }
     }    
 });
 
-export const { addTodo, checkTodo, deleteTodo, editTodo } = todoSlice.actions;
+export const { addTodo, checkTodo, deleteTodo, editTodo, modiTodo } = todoSlice.actions;
 export default todoSlice.reducer;

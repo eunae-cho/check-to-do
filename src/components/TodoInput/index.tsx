@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "store/todo/todoSlice";
 import styled from "styled-components"
+import Input from "@components/Input";
 
-const InputContainer = styled.form`
+const InputForm = styled.form`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -13,22 +14,22 @@ const InputContainer = styled.form`
     width: 100%;
     height: 44.5px;
 `
-const Input = styled.input`
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-    height: 35.5px;
-    border: 0.8px solid ${theme.colors.primary_20};
-    font-size: ${theme.fontSizes.sm};
-    border-radius: 2px;
-    box-shadow: inset 0px 0px 2px 0.5px ${theme.colors.primary_10};
-    outline: none;
+// export const Input = styled.input`
+//     display: inline-block;
+//     text-align: center;
+//     width: 100%;
+//     height: 35.5px;
+//     border: 0.8px solid ${theme.colors.primary_20};
+//     font-size: ${theme.fontSizes.sm};
+//     border-radius: 2px;
+//     box-shadow: inset 0px 0px 2px 0.5px ${theme.colors.primary_10};
+//     outline: none;
 
-    &:focus {
-        border: 1px solid ${theme.colors.primary_50};
-        box-shadow: none;
-    }
-`
+//     &:focus {
+//         border: 1px solid ${theme.colors.primary_50};
+//         box-shadow: none;
+//     }
+
 const Button = styled.button`
     display: inline-block;
     margin-left: 10px;
@@ -62,10 +63,9 @@ export default function TodoInput() {
     }
 
     return (
-        <InputContainer onSubmit={(e)=> { e.preventDefault(); clickSubmit(e);}}>
-                <Input id="input-text" type="text"  placeholder="할 일을 입력해주세요"  value={content} 
-                        onChange={(e) => setContent(e.target.value)}/>
+            <InputForm onSubmit={(e)=> { e.preventDefault(); clickSubmit(e);}}>
+                <Input value={content} onChange={setContent} />
                 <Button type="submit">등록</Button>
-        </InputContainer>
+            </InputForm>
     )
 }

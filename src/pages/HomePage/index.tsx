@@ -66,9 +66,7 @@ function HomePage() {
                 <TodoList id="todo-list-section">
                     {todoList.map((item, index)=> {
                         return (
-                            (item.editing)?
-                            null
-                            : <TodoItem key={index} todoItem={{ id:item.id, content: item.content, completed: item.completed, editing: item.editing }}/>
+                            <TodoItem key={index} todoItem={{ id:item.id, content: item.content, completed: item.completed, editing: item.editing }}/>
                         )
                     })}
                 </TodoList>

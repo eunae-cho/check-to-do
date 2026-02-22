@@ -8,6 +8,7 @@ const Circle = styled.div<{ checked?: boolean; }>`
     border-radius: 50%;
     border: 0.8px solid ${props => props.checked ?  theme.colors.primary : theme.colors.primary };
     margin: 0px 10px;
+    flex-shrink: 0;
 
     & > .checkbox-icon {
     width: 100%;
