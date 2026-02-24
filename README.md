@@ -44,4 +44,9 @@ StickyDo는 React와 TypeScript를 사용하여 강의를 참고하여 제작한
 ---
 
 ## 🔗 Demo
+<<<<<<< HEAD
 👉 https://eunae-cho.github.io/check-to-do/
+=======
+
+👉 https://eunae-cho.github.io/check-to-do/
+>>>>>>> 64a8bf0e547ac7033ea9f4a880aa2333a889f846
