@@ -30,7 +30,7 @@ const InputText = styled.input`
 export default function Input(input:IInput) {
 
     return (
-        <InputText name="TodoText" type='text' value={input.value} onChange={(e)=> input.onChange(e.target.value)}
+        <InputText name="TodoText" type='text' autoFocus value={input.value} onChange={(e)=> input.onChange(e.target.value)}
             onBlur={()=>{ input.onBlur?.();}} onKeyDown={(e)=> {if(e.key==='Enter') { input.onSubmit?.();}}}
         />
     )
